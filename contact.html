@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Rooftop Studio" />
+    <meta
+      name="description"
+      content="Contact Us and Developers in Rooftop Studio"
+    />
+    <meta name="keywords" content="Contact, Email, Support" />
+    <title>Rooftop Studio - Contact</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <!-- for footer icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!--Import Website Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bigshot+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- jQuery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        margin: 60px;
+      }
+
+      /* meet the team section */
+      #team {
+        text-align: center;
+        width: 100%;
+        margin-top: 60px;
+      }
+      #team-grid {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+      }
+      .team-member {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 20px;
+        width: 200px;
+        background-color: white;
+      }
+      .team-member img {
+        width: 100%;
+      }
+
+      /* newsletter section */
+      #newsletter {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        background-color: #3ca8c0;
+        padding: 60px;
+        align-items: center;
+      }
+      #newsletter p {
+        width: 60%;
+        font-size: larger;
+      }
+      .news-form {
+        width: 40%;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+      }
+      .form-box {
+        border-radius: 4px;
+        border-color: #e9edde;
+        height: 30px;
+        width: 100%;
+      }
+      .sub-btn {
+        border-radius: 8px;
+        background-color: #e9edde;
+        border-color: #3ca8c0;
+        height: 40px;
+        width: auto;
+        padding: 10px 20px;
+        align-self: center;
+        color: #131315;
+        font-weight: bold;
+        font-size: 85%;
+      }
+      .sub-btn:hover {
+        background-color: #bae82e;
+        border-color: #bae82e;
+      }
+      @media (max-width: 768px) {
+        #newsletter {
+          width: 80%;
+        }
+        .news-form {
+          flex-direction: column;
+          width: 60%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // alerts the user when they submit a message
+      $(document).ready(function () {
+        $(".contact-form").submit(function () {
+          alert(
+            "Your message has been sent successfully! We'll get back to you soon."
+          );
+        });
+      });
+    </script>
+
+    <div class="nav-container">
+      <a id="logo1" href="homepage.html">
+        <img
+          src="logo.png"
+          style="margin-left: 20px; padding: 5px; height: 50px"
+        />
+      </a>
+
+      <h2 class="navTitle" style="color: white; padding-left: 10px">
+        <a id="navTitle1" class="navTitle" href="homepage.html"
+          >Rooftop Studio</a
+        >
+      </h2>
+
+      <!-- regular nav -->
+      <ul id="nav" class="nav">
+        <li><a href="games.html">Games</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="storefront.html">Store</a></li>
+        <li><a href="forum.html">Forum</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+
+      <!-- Hamburger Menu Button -->
+      <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
+
+      <!-- Sidebar Menu -->
+      <nav id="sidebar" class="sidebar">
+        <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
+
+        <ul class="nav">
+          <a id="logo2" href="homepage.html">
+            <img
+              src="logo.png"
+              style="margin-left: 20px; padding: 5px; height: 50px"
+            />
+          </a>
+
+          <h2 class="navTitle" style="color: white; padding-left: 10px">
+            <a id="navTitle2" class="navTitle" href="homepage.html"
+              >Rooftop Studio</a
+            >
+          </h2>
+
+          <li><a href="games.html">Games</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="storefront.html">Store</a></li>
+          <li><a href="forum.html">Forum</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <a href="account.html" class="login-btn">Log In</a>
+
+      <!-- script for showing sidebar -->
+      <script>
+        window.onload = function () {
+          $.get("news.json", function (data) {
+            data.forEach((news) => {
+              $("#blog").append(
+                "<div class='news-container'><h3>" +
+                  news.category +
+                  "</h3><p class='title'>" +
+                  news.title +
+                  "</p><p class='info'>" +
+                  news.info +
+                  "</p><p class='time'>" +
+                  news.time +
+                  "</p></div>"
+              );
+            });
+          });
+        }; //end window.onload
+
+        // opens and closes hamburger menu on click
+        function toggleMenu() {
+          console.log("in toggle menu");
+          sidebar = document.getElementById("sidebar");
+          if (sidebar.style.visibility === "hidden") {
+            sidebar.style.visibility = "visible";
+          } else {
+            sidebar.style.visibility = "hidden";
+          }
+        }
+      </script>
+    </div>
+
+    <script>
+      window.onload = () => {
+        // store member information in associative array
+        const members = {
+          "Vina Le": "Narrative Designer",
+          "Anne Zhao": "Lead Programmer",
+          "Ke Chen": "Creative Director",
+          "Austin Chang": "Marketing Manager",
+        };
+
+        const teamGrid = document.getElementById("team-grid");
+        let output = "";
+
+        // prints the members' information to the page
+        Object.entries(members).forEach(([name, role]) => {
+          const firstName = name.split(" ")[0].toLowerCase();
+          const lastName = name.split(" ")[1].toLowerCase();
+          const email = `${firstName}.${lastName}@gmail.com`;
+          output += ` 
+                        <div class="team-member">
+                            <img src="images/character.png" />
+                            <h3>${name}</h3>
+                            <hr>
+                            <p><strong>${role}</strong></p>
+                            <p>${email}</p>
+                        </div>
+                    `;
+        });
+        teamGrid.innerHTML = output;
+      };
+    </script>
+
+    <!-- could use javascript array for this -->
+    <div class="container">
+      <div id="team">
+        <h1 style="margin: 30px 0px">MEET THE TEAM</h1>
+        <div id="team-grid"></div>
+      </div>
+    </div>
+
+    <div id="newsletter">
+      <h2>SIGN UP FOR OUR NEWSLETTER</h2>
+      <p>
+        Stay in the loop! Subscribe to our newsletter for the latest game
+        updates, patch notes, and exclusive behind-the-scenes content from
+        Rooftop Studios.
+      </p>
+      <form class="news-form">
+        <input
+          class="form-box"
+          type="text"
+          name="email"
+          placeholder="Your Email"
+          required
+        />
+        <button class="sub-btn" type="submit">Subscribe</button>
+      </form>
+    </div>
+
+    <footer>
+      <div id="contact">
+        <div class="contact-text">
+          <h2 style="color: #e9edde">CONTACT US</h2>
+          <p>
+            Feel free to use the form, or send us an email/call. We're here to
+            answer any questions you have. We look forward to hearing from you!
+          </p>
+          <div class="contact-info">
+            <i class="fa fa-phone"></i>
+            <p>(617) 123-8328</p>
+          </div>
+          <div class="contact-info">
+            <i class="fa fa-envelope"></i>
+            <p>rooftopstudios@gmail.com</p>
+          </div>
+          <div class="contact-info">
+            <i class="fa fa-map-pin"></i>
+            <p>177 College Ave, Medford, MA 02155</p>
+          </div>
+        </div>
+        <form class="contact-form">
+          <input
+            class="form-box"
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+          />
+          <input
+            class="form-box"
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required
+          />
+          <textarea
+            class="msg-box"
+            name="message"
+            rows="4"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button class="msg-btn" type="submit">Send Message!</button>
+        </form>
+      </div>
+
+      <div class="socials">
+        <a
+          href="https://www.facebook.com/"
+          target="_blank"
+          class="fa fa-facebook"
+        ></a>
+        <a href="https://x.com/home/" target="_blank" class="fa fa-twitter"></a>
+        <a
+          href="https://www.instagram.com/"
+          target="_blank"
+          class="fa fa-instagram"
+        ></a>
+      </div>
+      &copy; 2025 Rooftop Studios.
+    </footer>
+  </body>
+</html>

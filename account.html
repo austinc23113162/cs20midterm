@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Rooftop Studio" />
+    <meta
+      name="description"
+      content="Login to Account for Rooftop Studio Website"
+    />
+    <meta name="keywords" content="Login Page" />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Rooftop Studio - Login</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!--Import Website Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bigshot+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- jQuery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+
+    <style type="text/css">
+      h1 {
+        line-height: 1.2;
+        color: #131315;
+        margin: 20px auto;
+
+        text-align: center;
+        font-family: "Noto Serif", serif;
+        font-optical-sizing: auto;
+        font-weight: 800;
+        font-style: normal;
+      }
+
+      .login-container {
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        text-align: center;
+      }
+
+      .login-form .form-group {
+        margin-bottom: 15px;
+        text-align: left;
+      }
+
+      .login-form label {
+        display: block;
+        margin-bottom: 5px;
+        color: #555555;
+        font-size: 14px;
+      }
+
+      .login-form input {
+        width: 95%;
+        padding: 10px;
+        border: 1px solid #e9edde;
+        border-radius: 5px;
+        font-size: 16px;
+        outline: none;
+      }
+
+      .login-form input:focus {
+        border-color: #3ca8c0;
+      }
+
+      .login-button {
+        width: 100%;
+        padding: 10px;
+        background-color: #3ca8c0;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .login-button:hover {
+        background-color: #3ca8c0;
+      }
+
+      .signup-link {
+        margin-top: 20px;
+        color: #555555;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      $(document).ready(function () {
+        $(".contact-form").submit(function () {
+          alert(
+            "Your message has been sent successfully! We'll get back to you soon."
+          );
+        });
+      });
+    </script>
+    <div class="nav-container">
+      <a id="logo1" href="homepage.html">
+        <img
+          src="logo.png"
+          style="margin-left: 20px; padding: 5px; height: 50px"
+        />
+      </a>
+
+      <h2 class="navTitle" style="color: white; padding-left: 10px">
+        <a id="navTitle1" class="navTitle" href="homepage.html"
+          >Rooftop Studio</a
+        >
+      </h2>
+
+      <!-- regular nav -->
+      <ul id="nav" class="nav">
+        <li><a href="games.html">Games</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="storefront.html">Store</a></li>
+        <li><a href="forum.html">Forum</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+
+      <!-- Hamburger Menu Button -->
+      <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
+
+      <!-- Sidebar Menu -->
+      <nav id="sidebar" class="sidebar">
+        <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
+
+        <ul class="nav">
+          <a id="logo2" href="homepage.html">
+            <img
+              src="logo.png"
+              style="margin-left: 20px; padding: 5px; height: 50px"
+            />
+          </a>
+
+          <h2 class="navTitle" style="color: white; padding-left: 10px">
+            <a id="navTitle2" class="navTitle" href="homepage.html"
+              >Rooftop Studio</a
+            >
+          </h2>
+
+          <li><a href="games.html">Games</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="storefront.html">Store</a></li>
+          <li><a href="forum.html">Forum</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <a href="account.html" class="login-btn">Log In</a>
+
+      <!-- script for showing sidebar -->
+      <script>
+        // opens and closes hamburger menu on click
+        function toggleMenu() {
+          console.log("in toggle menu");
+          sidebar = document.getElementById("sidebar");
+          if (sidebar.style.visibility === "hidden") {
+            sidebar.style.visibility = "visible";
+          } else {
+            sidebar.style.visibility = "hidden";
+          }
+        }
+      </script>
+    </div>
+    <br /><br /><br />
+
+    <div
+      class="image-container"
+      style="background-image: url(images/skyscraper.jpg)"
+    >
+      <br /><br /><br />
+      <div class="login-container">
+        <h1>Log In</h1>
+        <form class="login-form" id="login-form">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              id="username"
+              placeholder="Enter your username"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+
+          <button type="submit" class="login-button">Log In</button>
+
+          <p class="signup-link">
+            Don't have an account? <a href="signup.html">Sign up</a>
+          </p>
+        </form>
+
+        <!-- sumbit button alert -->
+        <script>
+        window.onload = function() {
+          document.getElementById("login-form").onsubmit = function(event) {
+            event.preventDefault(); 
+            username = document.getElementById("username").value;
+            message = "Welcome, " + username + "!"
+            alert(message);
+          };
+        }
+      </script>
+  
+      </div>
+    </div>
+
+    <footer>
+      <div id="contact">
+        <div class="contact-text">
+          <h2 style="color: #e9edde">CONTACT US</h2>
+          <p>
+            Feel free to use the form, or send us an email/call. We're here to
+            answer any questions you have. We look forward to hearing from you!
+          </p>
+          <div class="contact-info">
+            <i class="fa fa-phone"></i>
+            <p>(617) 123-8328</p>
+          </div>
+          <div class="contact-info">
+            <i class="fa fa-envelope"></i>
+            <p>rooftopstudios@gmail.com</p>
+          </div>
+          <div class="contact-info">
+            <i class="fa fa-map-pin"></i>
+            <p>177 College Ave, Medford, MA 02155</p>
+          </div>
+        </div>
+        <form class="contact-form">
+          <input
+            class="form-box"
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+          />
+          <input
+            class="form-box"
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required
+          />
+          <textarea
+            class="msg-box"
+            name="message"
+            rows="4"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button class="msg-btn" type="submit">Send Message!</button>
+        </form>
+      </div>
+
+      <div class="socials">
+        <a
+          href="https://www.facebook.com/"
+          target="_blank"
+          class="fa fa-facebook"
+        ></a>
+        <a href="https://x.com/home/" target="_blank" class="fa fa-twitter"></a>
+        <a
+          href="https://www.instagram.com/"
+          target="_blank"
+          class="fa fa-instagram"
+        ></a>
+      </div>
+      &copy; 2025 Rooftop Studios.
+    </footer>
+  </body>
+</html>

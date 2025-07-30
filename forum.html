@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Rooftop Studio" />
+    <meta
+      name="description"
+      content="Forum for games and content of Rooftop Studio Website"
+    />
+    <meta name="keywords" content="Forum Page, Community, Support" />
+    <title>Rooftop Studio - Forum</title>
+
+
+    <!-- jQuery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="style.css" />
+    <!-- for footer icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!--Import Website Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bigshot+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .forum-header * {
+        color: black;
+      }
+
+      div.forum-header {
+        display: flex;
+        justify-content: center;
+      }
+
+      div.forum-header div {
+        display: flex;
+        background-color: white;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        margin: 25px 50px;
+        width: 25%;
+        height: 100vh;
+        padding: 0 15px;
+        border-radius: 15px;
+        overflow: auto;
+      }
+
+      div.forum-header p.comment {
+        background-color: #e7bfce;
+        padding: 10px;
+        border-radius: 10px;
+      }
+
+      div.forum-header textarea.textbox {
+        display: block;
+        width: 98%;
+        height: 100px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        font-size: large;
+      }
+
+      input[type="button"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #3ca8c0;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      input[type="button"]:hover {
+        background-color: #3188b3;
+      }
+
+      @media (max-width: 1100px) {
+        div.forum-header {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        div.forum-header div {
+          width: 85%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      $(document).ready(function () {
+        $(".contact-form").submit(function () {
+          alert(
+            "Your message has been sent successfully! We'll get back to you soon."
+          );
+        });
+      });
+    </script>
+    <div class="nav-container">
+      <a id="logo1" href="homepage.html">
+        <img
+          src="logo.png"
+          style="margin-left: 20px; padding: 5px; height: 50px"
+        />
+      </a>
+
+      <h2 class="navTitle" style="color: white; padding-left: 10px">
+        <a id="navTitle1" class="navTitle" href="homepage.html"
+          >Rooftop Studio</a
+        >
+      </h2>
+
+      <!-- regular nav -->
+      <ul id="nav" class="nav">
+        <li><a href="games.html">Games</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="storefront.html">Store</a></li>
+        <li><a href="forum.html">Forum</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+
+      <!-- Hamburger Menu Button -->
+      <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
+
+      <!-- Sidebar Menu -->
+      <nav id="sidebar" class="sidebar">
+        <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
+
+        <ul class="nav">
+          <a id="logo2" href="homepage.html">
+            <img
+              src="logo.png"
+              style="margin-left: 20px; padding: 5px; height: 50px"
+            />
+          </a>
+
+          <h2 class="navTitle" style="color: white; padding-left: 10px">
+            <a id="navTitle2" class="navTitle" href="homepage.html"
+              >Rooftop Studio</a
+            >
+          </h2>
+
+          <li><a href="games.html">Games</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="storefront.html">Store</a></li>
+          <li><a href="forum.html">Forum</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <a href="account.html" class="login-btn">Log In</a>
+
+      <!-- script for showing sidebar -->
+      <script>
+        function toggleMenu() {
+          console.log("in toggle menu");
+          sidebar = document.getElementById("sidebar");
+          if (sidebar.style.visibility === "hidden") {
+            sidebar.style.visibility = "visible";
+          } else {
+            sidebar.style.visibility = "hidden";
+          }
+        }
+
+        window.onload = function () {
+          //assign event handlers
+          $("#genBtn").click(function () {
+            leaveComment("#gen");
+          });
+          $("#discussBtn").click(function () {
+            leaveComment("#discuss");
+          });
+          $("#bugsBtn").click(function () {
+            leaveComment("#bugs");
+          });
+        }; //end window.onload
+
+        /* Name: leaveComment()
+         * Parameters: the id of the button pressed
+         * Function: Display the comment on the page
+         * Returns: none
+         */
+        function leaveComment(type) {
+          if ($(type + "Comment").val() == "") {
+            alert("Please leave a comment before submitting.");
+          } else {
+            $(type + "Form").after(
+              "<p class='comment'>" + $(type + "Comment").val() + "</p>"
+            );
+          }
+
+          $(type + "Comment").val("");
+        }
+      </script>
+    </div>
+
+    <h1>Forum</h1>
+    <!-- flex container for the whole forum -->
+    <div class="forum-header">
+      <!-- flex container for the general comments column -->
+      <div class="general">
+        <h3>General</h3>
+        <!-- form for user to leave a comment -->
+        <form method="get" action="#" id="genForm">
+          <textarea
+            id="genComment"
+            class="textbox"
+            placeholder="leave a comment"
+            required
+          ></textarea>
+          <input type="button" id="genBtn" value="Comment" />
+        </form>
+
+        <!-- hard-coded comments -->
+        <p class="comment">
+          I love this studio! Can't wait to try out all the new games!
+        </p>
+        <p class="comment">When is the new patch coming out?</p>
+        <p class="comment">
+          DO NOT DOWNLOAD THEIR GAMES. I DIED AND LOST ALL MY ITEMS AFTER
+          GRINDING THIS GAME FOR 4 HOURS.
+        </p>
+      </div>
+
+      <!-- flex container for the discussion comments column -->
+      <div class="discussion">
+        <h3>Game Dicussion</h3>
+        <!-- form for user to leave a comment -->
+        <form method="get" action="#" id="discussForm">
+          <textarea
+            id="discussComment"
+            class="textbox"
+            placeholder="leave a comment"
+            required
+          ></textarea>
+          <input type="button" id="discussBtn" value="Comment" />
+        </form>
+
+        <!-- hard-coded comments -->
+        <p class="comment">Does anyone know how to get past the second boss?</p>
+        <p class="comment">I found diamond!</p>
+        <p class="comment">
+          If anyone wants to join my clan, add me on discord. My id is
+          ILoveCS20#4963
+        </p>
+      </div>
+
+      <!-- flex container for the bug reports column -->
+      <div class="bugs">
+        <h3>Bug Reports</h3>
+        <!-- form for user to leave a comment -->
+        <form method="get" action="#" id="bugsForm">
+          <textarea
+            id="bugsComment"
+            class="textbox"
+            placeholder="leave a comment"
+            required
+          ></textarea>
+          <input type="button" id="bugsBtn" value="Comment" />
+        </form>
+
+        <!-- hard-coded comments -->
+        <p class="comment">
+          Is it just me or does the graphics for the sky look weird after the
+          update.
+        </p>
+        <p class="comment">I logged in today and my chest got looted</p>
+      </div>
+    </div>
+
+    <footer>
+      <div id="contact">
+        <div class="contact-text">
+          <h2 style="color: #e9edde">CONTACT US</h2>
+          <p>
+            Feel free to use the form, or send us an email/call. We're here to
+            answer any questions you have. We look forward to hearing from you!
+          </p>
+          <div class="contact-info">
+            <i class="fa fa-phone"></i>
+            <p>(617) 123-8328</p>
+          </div>
+          <div class="contact-info">
+            <i class="fa fa-envelope"></i>
+            <p>rooftopstudios@gmail.com</p>
+          </div>
+          <div class="contact-info">
+            <i class="fa fa-map-pin"></i>
+            <p>177 College Ave, Medford, MA 02155</p>
+          </div>
+        </div>
+        <form class="contact-form">
+          <input
+            class="form-box"
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+          />
+          <input
+            class="form-box"
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required
+          />
+          <textarea
+            class="msg-box"
+            name="message"
+            rows="4"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button class="msg-btn" type="submit">Send Message!</button>
+        </form>
+      </div>
+
+      <div class="socials">
+        <a
+          href="https://www.facebook.com/"
+          target="_blank"
+          class="fa fa-facebook"
+        ></a>
+        <a href="https://x.com/home/" target="_blank" class="fa fa-twitter"></a>
+        <a
+          href="https://www.instagram.com/"
+          target="_blank"
+          class="fa fa-instagram"
+        ></a>
+      </div>
+      &copy; 2025 Rooftop Studios.
+    </footer>
+  </body>
+</html>

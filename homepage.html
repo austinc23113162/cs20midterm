@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Rooftop Studio" />
+    <meta name="description" content="Homepage of Rooftop Studio Website" />
+    <meta name="keywords" content="Home Page, Landing Page" />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Rooftop Studio - Home</title>
+
+    <!-- for footer icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!--Import Website Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bigshot+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- jQuery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+
+    <style type="text/css">
+      .textbox {
+        padding: 30px;
+        margin-top: 50px;
+        background-color: rgba(0, 0, 0, 0.7);
+      }
+
+      .textbox h1,
+      .textbox h2 {
+        opacity: 1;
+        color: white;
+      }
+
+      #about {
+        text-align: center;
+        font-size: larger;
+        width: 60%;
+        margin: 40px auto;
+      }
+
+      #games {
+        text-align: center;
+        padding: 40px;
+        margin: 0px auto;
+        background-color: #3ca8c0;
+      }
+
+      .game-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center horizontally */
+        justify-content: center; /* Center vertically */
+        text-align: center;
+        padding: 20px;
+        gap: 30px;
+      }
+
+      .game-container img {
+        max-width: 400px;
+        height: 500px;
+        border-radius: 10px;
+      }
+
+      .game-name {
+        font-size: xx-large;
+        font-family: "Bigshot One", serif;
+        font-weight: 200;
+      }
+
+      .game-text {
+        color: #e9edde;
+        max-width: 60%;
+        padding-right: 30px;
+        font-size: larger;
+      }
+
+      /* FOR SLIDESHOW */
+      #slides-wrapper {
+        display: block;
+        height: 300px;
+        align-items: center;
+        transition: 1s ease-in-out;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+
+      #slide img {
+        height: 300px;
+        width: 300px;
+        display: block;
+      }
+
+      /* START OF CSS FOR HIRING  */
+
+      .hiring-container {
+        text-align: center;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        background: #ffffff;
+        overflow: hidden;
+        padding-bottom: 100px;
+      }
+
+      .stats {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .stat-box {
+        background: #eee;
+        padding: 20px;
+        padding-bottom: 30px;
+        border-radius: 8px;
+        text-align: center;
+        width: 120px;
+      }
+
+      .stat-box h2 {
+        font-size: 40px;
+        margin-bottom: 5px;
+      }
+
+      .button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 25px;
+        background: #5c80bc;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background-color 0.3s;
+        border-radius: 5px;
+      }
+
+      .button:hover {
+        background: #315d96;
+      }
+
+      .hiring-container img {
+        height: 500px;
+        padding-top: 40px;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          text-align: center;
+        }
+        .hiring-container img {
+          display: none;
+        }
+        .game-container img {
+          width: 300px;
+          height: 400px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      $(document).ready(function () {
+        $(".contact-form").submit(function () {
+          alert(
+            "Your message has been sent successfully! We'll get back to you soon."
+          );
+        });
+      });
+    </script>
+    <div class="nav-container">
+      <a id="logo1" href="homepage.html">
+        <img
+          src="logo.png"
+          style="margin-left: 20px; padding: 5px; height: 50px"
+        />
+      </a>
+
+      <h2 class="navTitle" style="color: white; padding-left: 10px">
+        <a id="navTitle1" class="navTitle" href="homepage.html"
+          >Rooftop Studio</a
+        >
+      </h2>
+
+      <!-- regular nav -->
+      <ul id="nav" class="nav">
+        <li><a href="games.html">Games</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="storefront.html">Store</a></li>
+        <li><a href="forum.html">Forum</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+
+      <!-- Hamburger Menu Button -->
+      <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
+
+      <!-- Sidebar Menu -->
+      <nav id="sidebar" class="sidebar">
+        <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
+
+        <ul class="nav">
+          <a id="logo2" href="homepage.html">
+            <img
+              src="logo.png"
+              style="margin-left: 20px; padding: 5px; height: 50px"
+            />
+          </a>
+
+          <h2 class="navTitle" style="color: white; padding-left: 10px">
+            <a id="navTitle2" class="navTitle" href="homepage.html"
+              >Rooftop Studio</a
+            >
+          </h2>
+
+          <li><a href="games.html">Games</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="storefront.html">Store</a></li>
+          <li><a href="forum.html">Forum</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <a href="account.html" class="login-btn">Log In</a>
+
+      <!-- script for showing sidebar -->
+      <script>
+        // opens and closes hamburger menu on click
+        function toggleMenu() {
+          console.log("in toggle menu");
+          sidebar = document.getElementById("sidebar");
+          if (sidebar.style.visibility === "hidden") {
+            sidebar.style.visibility = "visible";
+          } else {
+            sidebar.style.visibility = "hidden";
+          }
+        }
+      </script>
+    </div>
+
+    <div
+      class="image-container"
+      style="background-image: url(images/cityrooftop.jpg)"
+    >
+      <br /><br /><br /><br /><br /><br />
+      <div class="textbox">
+        <hr />
+        <h2 style="font-weight: normal">Games on another level.</h2>
+        <h1 style="font-size: 300%; font-weight: 400; margin: 20px auto">
+          Rooftop Studio
+        </h1>
+        <hr />
+      </div>
+    </div>
+
+    <div id="about">
+      <h2>ABOUT US</h2>
+      <p>
+        At Rooftop Studio, we're committed to making games that are mechanically
+        interesting, visually stunning, and deeply engaging. Every game we build
+        is an exploration of an alternate universe - and we're inviting you to
+        join us in that journey.
+      </p>
+    </div>
+
+    <div id="games">
+      <h2 style="color: #e9edde">RECENT PROJECTS</h2>
+
+      <div class="game-container">
+        <img src="images/bar.jpg" />
+
+        <div class="game-text">
+          <h3 class="game-name">The Velvet Room</h3>
+          <p>
+            Manage a bar in a foreign city. Mix drinks, upgrade your
+            establishment, and meet customers.<br /><br />Perhaps you'll soon
+            realize that there's more to this city than meets the eye...
+          </p>
+        </div>
+
+        <div id="slides-wrapper">
+          <div id="slide">
+            <img src="images/drink7.png" />
+          </div>
+        </div>
+      </div>
+
+      <br />
+      <hr />
+    </div>
+
+    <!-- script for slideshow of drinks -->
+    <script language="javascript">
+      var drinkIndex = 0;
+
+      $(document).ready(function () {
+        slideShow();
+      });
+
+      function slideShow() {
+        $("#slide img").fadeOut(1000, nextSlide);
+      }
+      function nextSlide() {
+        if (drinkIndex == 7) {
+          drinkIndex = 0;
+        }
+        drinkIndex++;
+        console.log("images/drink" + drinkIndex + ".png");
+        $("#slide img").attr("src", "images/drink" + drinkIndex + ".png");
+        $("#slide img").fadeIn(1000, slideShow);
+      }
+    </script>
+
+    <!-- HIRING SECTION -->
+    <div class="hiring-container">
+      <div class="left-section">
+        <h1>We're Hiring!</h1>
+        <p>Join us to craft unforgettable experiences for players.</p>
+
+        <div class="stats">
+          <div class="stat-box">
+            <h2>10</h2>
+            Open Positions
+          </div>
+          <div class="stat-box">
+            <h2>2</h2>
+            Locations
+          </div>
+        </div>
+
+        <a href="contact.html" class="button"> Join Now! </a>
+      </div>
+
+      <img src="images/hiring.png" />
+    </div>
+
+    <footer>
+      <div id="contact">
+        <div class="contact-text">
+          <h2 style="color: #e9edde">CONTACT US</h2>
+          <p>
+            Feel free to use the form, or send us an email/call. We're here to
+            answer any questions you have. We look forward to hearing from you!
+          </p>
+          <div class="contact-info">
+            <i class="fa fa-phone"></i>
+            <p>(617) 123-8328</p>
+          </div>
+          <div class="contact-info">
+            <i class="fa fa-envelope"></i>
+            <p>rooftopstudios@gmail.com</p>
+          </div>
+          <div class="contact-info">
+            <i class="fa fa-map-pin"></i>
+            <p>177 College Ave, Medford, MA 02155</p>
+          </div>
+        </div>
+        <form class="contact-form">
+          <input
+            class="form-box"
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+          />
+          <input
+            class="form-box"
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required
+          />
+          <textarea
+            class="msg-box"
+            name="message"
+            rows="4"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button class="msg-btn" type="submit">Send Message!</button>
+        </form>
+      </div>
+
+      <div class="socials">
+        <a
+          href="https://www.facebook.com/"
+          target="_blank"
+          class="fa fa-facebook"
+        ></a>
+        <a href="https://x.com/home/" target="_blank" class="fa fa-twitter"></a>
+        <a
+          href="https://www.instagram.com/"
+          target="_blank"
+          class="fa fa-instagram"
+        ></a>
+      </div>
+      &copy; 2025 Rooftop Studios.
+    </footer>
+  </body>
+</html>

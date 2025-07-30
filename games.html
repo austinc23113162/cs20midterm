@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Rooftop Studio" />
+    <meta
+      name="description"
+      content="Collection of RPG mystery games for all ages and anyone looking for a thrill."
+    />
+    <meta
+      name="keywords"
+      content="New Release, Indie Game, Role-playing game, Strategy, Mystery"
+    />
+    <title>Rooftop Studio- Featured Games</title>
+
+    <!-- for footer icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!--Import Website Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bigshot+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- jQuery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="style.css" />
+    <style type="text/css">
+      .game {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: auto;
+        padding: 5%;
+        background-color: #3ca8c0;
+      }
+
+      .game-img {
+        flex: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 3%;
+      }
+
+      .game-img img {
+        max-width: 100%;
+        border-radius: 16px;
+      }
+
+      .game-text {
+        flex: 70%;
+        padding: 3%;
+      }
+
+      .gameTitle {
+        font-size: 36px;
+        padding-bottom: 20px;
+      }
+
+      p {
+        padding-bottom: 8px;
+      }
+
+      @media screen and (max-width: 800px) {
+        .game {
+          display: block;
+        }
+
+        .game-img img {
+          max-width: 75%;
+          border-radius: 16px;
+        }
+
+        ul {
+          padding-bottom: 0px;
+          margin-bottom: 0px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      $(document).ready(function () {
+        $(".contact-form").submit(function () {
+          alert(
+            "Your message has been sent successfully! We'll get back to you soon."
+          );
+        });
+      });
+    </script>
+    <div class="nav-container">
+      <a id="logo1" href="homepage.html">
+        <img
+          src="logo.png"
+          style="margin-left: 20px; padding: 5px; height: 50px"
+        />
+      </a>
+
+      <h2 class="navTitle" style="color: white; padding-left: 10px">
+        <a id="navTitle1" class="navTitle" href="homepage.html"
+          >Rooftop Studio</a
+        >
+      </h2>
+
+      <!-- regular nav -->
+      <ul id="nav" class="nav">
+        <li><a href="games.html">Games</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="storefront.html">Store</a></li>
+        <li><a href="forum.html">Forum</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+
+      <!-- Hamburger Menu Button -->
+      <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
+
+      <!-- Sidebar Menu -->
+      <nav id="sidebar" class="sidebar">
+        <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
+
+        <ul class="nav">
+          <a id="logo2" href="homepage.html">
+            <img
+              src="logo.png"
+              style="margin-left: 20px; padding: 5px; height: 50px"
+            />
+          </a>
+
+          <h2 class="navTitle" style="color: white; padding-left: 10px">
+            <a id="navTitle2" class="navTitle" href="homepage.html"
+              >Rooftop Studio</a
+            >
+          </h2>
+
+          <li><a href="games.html">Games</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="storefront.html">Store</a></li>
+          <li><a href="forum.html">Forum</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <a href="account.html" class="login-btn">Log In</a>
+
+      <!-- script for showing sidebar -->
+      <script>
+        window.onload = function () {
+          $.get("news.json", function (data) {
+            data.forEach((news) => {
+              $("#blog").append(
+                "<div class='news-container'><h3>" +
+                  news.category +
+                  "</h3><p class='title'>" +
+                  news.title +
+                  "</p><p class='info'>" +
+                  news.info +
+                  "</p><p class='time'>" +
+                  news.time +
+                  "</p></div>"
+              );
+            });
+          });
+        }; //end window.onload
+
+        function toggleMenu() {
+          console.log("in toggle menu");
+          sidebar = document.getElementById("sidebar");
+          if (sidebar.style.visibility === "hidden") {
+            sidebar.style.visibility = "visible";
+          } else {
+            sidebar.style.visibility = "hidden";
+          }
+        }
+      </script>
+    </div>
+
+    <main style="max-width: 100%; padding: 0px">
+      <h1>Featured Games</h1>
+
+      <div class="game">
+        <div class="game-img">
+          <img src="images/bar.jpg" />
+        </div>
+
+        <div class="game-text">
+          <h2 class="gameTitle">The Velvet Room</h2>
+          <p>
+            Manage a bar in a foreign city. Mix drinks, upgrade your
+            establishment, and meet customers.
+          </p>
+
+          <p>
+            Perhaps you'll soon realize that there's more to this city than
+            meets the eye...
+          </p>
+
+          <div>
+            <ul>
+              <li>
+                <strong>Bar Management</strong> - Run and manage a stylish bar
+                in a foreign city.
+              </li>
+              <li>
+                <strong>Drink Mixing</strong> - Craft cocktails using a variety
+                of ingredients to satisfy customers' tastes.
+              </li>
+              <li>
+                <strong>Customer Interaction</strong> - Engage with unique
+                patrons, each with their own backstory and secrets.
+              </li>
+              <li>
+                <strong>Upgrades & Expansion</strong> - Improve your bar with
+                better furniture, decor, and high-end liquor.
+              </li>
+              <li>
+                <strong>Mystery & Intrigue</strong> - Uncover hidden stories
+                about the city and its people as you serve drinks.
+              </li>
+              <li>
+                <strong>Choice-Driven Dialogue</strong> - Your interactions with
+                customers influence relationships and outcomes.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="game" style="background-color: #e9edde">
+        <div class="game-img" style="float: right">
+          <img src="images/restaurant.jpg" />
+        </div>
+
+        <div class="game-text">
+          <h2 class="gameTitle">The Top Performer</h2>
+          <p>
+            As a server at the most renowned restaurant in town, you bring in
+            more tips than you can count. But one day, you encounter a check for
+            3 million as your tip amount.
+          </p>
+
+          <p>
+            With this, you dive head first into the dark side of your business.
+          </p>
+
+          <div>
+            <ul>
+              <li>
+                <strong>Decision-Making:</strong> Choose how to handle the
+                money—report it, spend it, or investigate its origins.
+              </li>
+              <li>
+                <strong>Uncover Secrets:</strong> The tip leads you into the
+                underground world of crime, corruption, and power.
+              </li>
+              <li>
+                <strong>Interactive Dialogue:</strong> Engage with shady
+                characters, law enforcement, and wealthy elites.
+              </li>
+              <li>
+                <strong>Action and Strategy:</strong> Participate in high-stakes
+                deals, and climb the ranks of the underworld.
+              </li>
+              <li>
+                <strong>Multiple Endings:</strong> Your choices determine
+                whether you thrive, escape, or fall victim to your decisions.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="game">
+        <div class="game-img">
+          <img src="images/grocery.jpg" />
+        </div>
+
+        <div class="game-text">
+          <h2 class="gameTitle">Fortune's Curse</h2>
+          <p>
+            As a cashier at a struggling convenience store, you sell a winning
+            lottery ticket worth $500 million. But when the ticket buyer
+            mysteriously disappears, you’re left holding the jackpot.
+          </p>
+
+          <p>
+            With this, your family and friends start to turn on you, and trust
+            becomes a luxury you can’t afford.
+          </p>
+
+          <div>
+            <ul>
+              <li>
+                <strong>The Temptation:</strong> You find yourself in possession
+                of a fortune with no rightful owner in sight.
+              </li>
+              <li>
+                <strong>Family & Friends Turn:</strong> As rumors spread, those
+                closest to you start acting differently.
+              </li>
+              <li>
+                <strong>Social Manipulation:</strong> Navigate jealousy,
+                betrayal, and shifting relationships.
+              </li>
+              <li>
+                <strong>Trust or Isolation:</strong> Decide who to share your
+                wealth with and who to cut off.
+              </li>
+              <li>
+                <strong>Psychological Battle:</strong> Experience gaslighting,
+                guilt trips, and emotional confrontations.
+              </li>
+              <li>
+                <strong>Legal & Ethical Risks:</strong> Face investigations,
+                lawsuits, and moral dilemmas.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div id="contact">
+        <div class="contact-text">
+          <h2 style="color: #e9edde">CONTACT US</h2>
+          <p>
+            Feel free to use the form, or send us an email/call. We're here to
+            answer any questions you have. We look forward to hearing from you!
+          </p>
+          <div class="contact-info">
+            <i class="fa fa-phone"></i>
+            <p>(617) 123-8328</p>
+          </div>
+          <div class="contact-info">
+            <i class="fa fa-envelope"></i>
+            <p>rooftopstudios@gmail.com</p>
+          </div>
+          <div class="contact-info">
+            <i class="fa fa-map-pin"></i>
+            <p>177 College Ave, Medford, MA 02155</p>
+          </div>
+        </div>
+        <form class="contact-form">
+          <input
+            class="form-box"
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+          />
+          <input
+            class="form-box"
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required
+          />
+          <textarea
+            class="msg-box"
+            name="message"
+            rows="4"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button class="msg-btn" type="submit">Send Message!</button>
+        </form>
+      </div>
+
+      <div class="socials">
+        <a
+          href="https://www.facebook.com/"
+          target="_blank"
+          class="fa fa-facebook"
+        ></a>
+        <a href="https://x.com/home/" target="_blank" class="fa fa-twitter"></a>
+        <a
+          href="https://www.instagram.com/"
+          target="_blank"
+          class="fa fa-instagram"
+        ></a>
+      </div>
+      &copy; 2025 Rooftop Studios.
+    </footer>
+  </body>
+</html>
